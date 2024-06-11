@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body onload="open_sidePannel()">
+  <div class="side-panel" id="side-panel">
+    <!-- <button id="menu-btn-2"><i class='bx bxs-chevrons-left'></i></button> -->
+    <h3 class="filter-label">Select Category:</h3>
+    <select id="category-select">
+      <option value="9">General Knowledge</option>
+      <option value="17">Science & Nature</option>
+      <option value="18" selected>Science: Computers</option>
+      <option value="19">Science: Mathematics</option>
+      <option value="10">Entertainment: Books</option>
+      <option value="11">Entertainment: Film</option>
+      <option value="12">Entertainment: Music</option>
+      <option value="13">Entertainment: Musicals & Theatres</option>
+      <option value="14">Entertainment: Television</option>
+      <option value="15">Entertainment: Video Games</option>
+      <option value="16">Entertainment: Board Games</option>
+      <option value="20">Mythology</option>
+      <option value="21">Sports</option>
+      <option value="22">Geography</option>
+      <option value="23">History</option>
+      <option value="24">Politics</option>
+      <option value="25">Art</option>
+      <option value="26">Celebrities</option>
+      <option value="27">Animals</option>
+      <option value="28">Vehicles</option>
+      <option value="29">Entertainment: Comics</option>
+      <option value="30">Science: Gadgets</option>
+      <option value="31">Entertainment: Japanese Anime & Manga</option>
+      <option value="32">Entertainment: Cartoon & Animations</option>
+    </select>
+    <h3 class="filter-label">Select Difficulty:</h3>
+    <select id="difficulty-select">
+      <option value="easy" selected>Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    <h3 class="filter-label">Number of Questions:</h3>
+
+    <input type="number" value="10" max="30" id="amount-select">
+
+    <h3 class="filter-label">Set Time:</h3>
+    <select id="set_time">
+      <option value="5">5sec</option>
+      <option value="10">10sec</option>
+      <option value="15">15sec</option>
+      <option value="20">20sec</option>
+      <option value="25">25sec</option>
+      <option value="30" selected>30sec</option>
+      <option value="35">35sec</option>
+      <option value="40">40sec</option>
+      <option value="45">45sec</option>
+      <option value="50">50sec</option>
+      <option value="55">55sec</option>
+      <option value="60">60sec</option>
+    </select>
+
+    <div class="start-btn">
+      <button onclick="applyFilters()" id="filter-btn" title="Start the game (Press Enter)"><span id="start"
+          class="starts"><img class="starts" src="./Start.png" alt=""></span></button>
+    </div>
+  </div>
+  <div id="quiz-container">
+    <div id="score-container" title="Score Count">
+      <div id="score-box"><img src="./Score.png" alt=""></div>
+      <div id="score-box1">00</div>:
+      <div id="score-box2">00</div>
+      <!-- <div id="score-box3">00</div> -->
+    </div>
+    <div id="timer-containerr" title="Timer"><img src="./Timer.png" alt=""><span id="timer-container">00</span></div>
+    <button id="life-btn" onclick="use_life()" title="Use Hearts (L)" disabled></button>
+    <hr class="hr-line">
+    <div id="question-container"></div>
+    <div id="options-container"></div>
+    <button id="next-btn" title="Click to next question (Press Space bar)"><span class="next"><img src="./Next.png"
+          alt=""></span></button>
+  </div>
+  <button id="menu-btn" title="Game Menu (Press 'M')"><i class='bx bx-menu'></i></button>
+
+  <div class="Score-container" id="Score-container">
+    <button id="cancel-btn" title="Close(c)"
+      onclick="document.getElementById('Score-container').style.visibility = 'hidden'"><img src="./Cancel.png"
+        alt=""></button>
+    <!-- <h3>Quize Result</h3> -->
+    <h1 id="message"></h1>
+    <h1><span id="scr1"></span>/<span id="scr2"></span></h1>
+    <ul>
+      <li>Correct Answere: <span id="c-ans1"></span></li>
+      <li>Incorrect Answere: <span id="ic-ans1"></span></li>
+      <li>Time Taken: <span id="time-taken"></span></li>
+    </ul>
+    <div class="buttons">
+      <button class="score-btns" id="shareButton" title="Share" disabled><img src="./Share.png" alt=""></button>
+      <button class="score-btns" id="Play_again" onclick="window.location.reload()"
+        title="Play again (Press Enter)"><img src="./restart.png" alt=""></button>
+      <button class="score-btns" id="saveButton" title="Save Score"><img src="./Save.png" alt=""></button>
+    </div>
+  </div>
+  <!-- <button onclick="window.print()">Print</button> -->
+
+  <script src="script.js">
+
+  </script>
+
+  <script src="share.js"></script>
+</body>
+
+</html>
